@@ -1,0 +1,57 @@
+[rank: 0] Seed set to 0
+Scoring 1 PDBs...:   0%|          | 0/1 [00:00<?, ?it/s]
+Computing potts parameters:   0%|          | 0/2 [00:00<?, ?it/s][A
+                                                                 [AScoring 1 PDBs...:   0%|          | 0/1 [00:49<?, ?it/s]
+Error executing job with overrides: ['ckpt_path=model_params/caliby/caliby.ckpt', 'input_cfg.conformer_dir=/ceph/opig-shared/users/haque/DPhil/caliby/ensemble_pdbs/cleaned_ensemble_pdbs/cryo_H3/cc95-epoch3490-sampling_partial_diffusion-ss1.0-schurn0-ccstart0.0-dx0.0-dy0.0-dz0.0-rewind150', 'out_dir=examples/outputs/score_ensemble', 'max_num_conformers=20', 'include_primary_conformer=true', 'sampling_cfg_overrides.num_workers=1']
+Traceback (most recent call last):
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/eval/sampling/score_ensemble.py", line 53, in main
+    outputs = score_samples_ensemble(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/eval/eval_utils/seq_des_utils.py", line 366, in score_samples_ensemble
+    id_to_aux = model.score_samples(batch, sampling_inputs=sampling_inputs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/model/seq_denoiser/sd_model.py", line 99, in score_samples
+    potts_decoder_aux, batch, sampling_inputs = self.denoiser.compute_potts_params(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/model/seq_denoiser/denoisers/atom_mpnn_denoiser.py", line 312, in compute_potts_params
+    _, aux_preds_i = self(subbatch, is_sampling=True, sampling_inputs=sampling_inputs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/model/seq_denoiser/denoisers/atom_mpnn_denoiser.py", line 53, in forward
+    seq_logits, mpnn_feats = self.atom_mpnn(batch, is_sampling)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/model/seq_denoiser/denoisers/seq_design/atom_mpnn.py", line 99, in forward
+    h_E, E_idx, D_neighbors = self.token_features(batch)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/model/seq_denoiser/denoisers/seq_design/atom_mpnn.py", line 201, in forward
+    RBF_all.append(self._get_rbf(X_all[..., i, :], X_all[..., j, :], E_idx))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/model/seq_denoiser/denoisers/seq_design/atom_mpnn.py", line 268, in _get_rbf
+    D_A_B = torch.sqrt(torch.sum((A[:, :, None, :] - B[:, None, :, :]) ** 2, -1) + 1e-6)  # [B, L, L]
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torch/_tensor.py", line 39, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 506.00 MiB. GPU 0 has a total capacity of 21.97 GiB of which 520.25 MiB is free. Including non-PyTorch memory, this process has 21.46 GiB memory in use. Of the allocated memory 21.18 GiB is allocated by PyTorch, and 86.82 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

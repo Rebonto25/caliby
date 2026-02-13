@@ -1,6 +1,6 @@
 #!/bin/bash
 # Activate environment
-ENV_DIR=envs  # set this to your environment directory
+ENV_DIR=/scratch/bulk/haque/envs  # set this to your environment directory
 source ${ENV_DIR}/caliby/bin/activate
 
 # Required for AtomWorks.

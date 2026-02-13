@@ -1,0 +1,58 @@
+/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torchmetrics/utilities/imports.py:24: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  _PYTHON_LOWER_3_8 = LooseVersion(_PYTHON_VERSION) < LooseVersion("3.8")
+Cleaning RCSB mmCIF files:   0%|          | 0/1 [00:00<?, ?it/s]Cleaning RCSB mmCIF files: 100%|██████████| 1/1 [00:00<00:00, 12.59it/s]
+/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torchmetrics/utilities/imports.py:24: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  _PYTHON_LOWER_3_8 = LooseVersion(_PYTHON_VERSION) < LooseVersion("3.8")
+Error executing job with overrides: ['input_cfg.pdb_dir=/ceph/opig-shared/users/haque/DPhil/caliby/ensemble_pdbs/cc95-epoch3490-sampling_partial_diffusion-ss1.0-schurn0-ccstart0.0-dx0.0-dy0.0-dz0.0-rewind150', 'num_workers=50', 'out_dir=/ceph/opig-shared/users/haque/DPhil/caliby/ensemble_pdbs/cleaned_ensemble_pdbs/cryo_H3']
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/data/preprocessing/atomworks/clean_pdbs.py", line 44, in _clean_pdb
+    example = get_sd_example(pdb_path, data_cfg=None)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/eval/eval_utils/seq_des_utils.py", line 410, in get_sd_example
+    example = preprocess_pdb(pdb_path, data_cfg)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/eval/eval_utils/seq_des_utils.py", line 441, in preprocess_pdb
+    input_data = aw_parse(pdb_path, **cif_parser_args)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/atomworks/io/parser.py", line 211, in parse
+    file_type = file_type or infer_pdb_file_type(filename)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/atomworks/io/utils/io_utils.py", line 318, in infer_pdb_file_type
+    raise ValueError(f"Unsupported file type: {inferred_file_type}")
+ValueError: Unsupported file type: 
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/caliby/data/preprocessing/atomworks/clean_pdbs.py", line 36, in main
+    list(parallel(tqdm(jobs, total=len(jobs), desc="Cleaning RCSB mmCIF files")))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Unsupported file type: 
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

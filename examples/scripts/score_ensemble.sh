@@ -5,5 +5,5 @@
 source env_setup.sh
 python3 caliby/eval/sampling/score_ensemble.py \
     ckpt_path=model_params/caliby/caliby.ckpt \
-    input_cfg.conformer_dir=examples/outputs/generate_ensembles/cc95-epoch3490-sampling_partial_diffusion-ss1.0-schurn0-ccstart0.0-dx0.0-dy0.0-dz0.0-rewind150 \
+    input_cfg.conformer_dir=/ceph/opig-shared/users/haque/DPhil/caliby/ensemble_pdbs/cc95-epoch3490-sampling_partial_diffusion-ss1.0-schurn0-ccstart0.0-dx0.0-dy0.0-dz0.0-rewind150 \
     out_dir=examples/outputs/score_ensemble

@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/util_python_scripts/mutate_pdb.py", line 105, in _require_biopython
+    from Bio import SeqIO  # type: ignore
+ModuleNotFoundError: No module named 'Bio'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/util_python_scripts/mutate_pdb.py", line 398, in <module>
+    main()
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/util_python_scripts/mutate_pdb.py", line 354, in main
+    jobs = _iter_fasta_jobs(
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/util_python_scripts/mutate_pdb.py", line 260, in _iter_fasta_jobs
+    SeqIO, _, _, _ = _require_biopython()
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/util_python_scripts/mutate_pdb.py", line 109, in _require_biopython
+    raise ModuleNotFoundError(
+ModuleNotFoundError: Biopython is required. Install with: pip install biopython

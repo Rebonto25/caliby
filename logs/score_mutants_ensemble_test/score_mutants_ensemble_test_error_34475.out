@@ -1,0 +1,9 @@
+[rank: 0] Seed set to 0
+Scoring 1 PDBs...:   0%|          | 0/1 [00:00<?, ?it/s]/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torchmetrics/utilities/imports.py:24: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  _PYTHON_LOWER_3_8 = LooseVersion(_PYTHON_VERSION) < LooseVersion("3.8")
+/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torchmetrics/utilities/imports.py:24: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  _PYTHON_LOWER_3_8 = LooseVersion(_PYTHON_VERSION) < LooseVersion("3.8")
+
+Computing potts parameters:   0%|          | 0/1 [00:00<?, ?it/s][A
+Computing potts parameters: 100%|██████████| 1/1 [00:05<00:00,  5.55s/it][A
+                                                                         [AScoring 1 PDBs...: 100%|██████████| 1/1 [00:23<00:00, 23.56s/it]Scoring 1 PDBs...: 100%|██████████| 1/1 [00:23<00:00, 23.56s/it]

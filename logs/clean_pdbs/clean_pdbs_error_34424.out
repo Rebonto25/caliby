@@ -1,0 +1,2 @@
+/data/slurm/spool/job34424/slurm_script: line 21: env_setup.sh: No such file or directory
+python3: can't open file '/ceph/opig-shared/users/haque/DPhil/caliby/scoring_analysis/mutant_pdbs_fast/caliby/data/preprocessing/atomworks/clean_pdbs.py': [Errno 2] No such file or directory

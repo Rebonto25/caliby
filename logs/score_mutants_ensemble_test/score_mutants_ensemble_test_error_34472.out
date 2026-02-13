@@ -1,0 +1,5 @@
+[rank: 0] Seed set to 0
+Scoring 1 PDBs...:   0%|          | 0/1 [00:00<?, ?it/s]
+Computing potts parameters:   0%|          | 0/1 [00:00<?, ?it/s][A
+Computing potts parameters: 100%|██████████| 1/1 [00:00<00:00,  1.37it/s][A
+                                                                         [AScoring 1 PDBs...: 100%|██████████| 1/1 [00:07<00:00,  7.24s/it]Scoring 1 PDBs...: 100%|██████████| 1/1 [00:07<00:00,  7.24s/it]

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/util_python_scripts/mutate_pdb.py", line 398, in <module>
+    main()
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/util_python_scripts/mutate_pdb.py", line 344, in main
+    raise FileNotFoundError(f"Parent PDB not found: {parent_pdb}")
+FileNotFoundError: Parent PDB not found: /path/to/parent_complex.pdb

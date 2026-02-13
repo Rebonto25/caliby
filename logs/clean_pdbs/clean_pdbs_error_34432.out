@@ -1,0 +1,11 @@
+/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torchmetrics/utilities/imports.py:24: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  _PYTHON_LOWER_3_8 = LooseVersion(_PYTHON_VERSION) < LooseVersion("3.8")
+Cleaning RCSB mmCIF files:   0%|          | 0/1 [00:00<?, ?it/s]Cleaning RCSB mmCIF files: 100%|██████████| 1/1 [00:00<00:00, 272.32it/s]
+/scratch/bulk/haque/envs/caliby/lib/python3.12/site-packages/torchmetrics/utilities/imports.py:24: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  _PYTHON_LOWER_3_8 = LooseVersion(_PYTHON_VERSION) < LooseVersion("3.8")
+Chain A contains both polymer and non-polymer residues; separating them for processing, naming the non-polymer residues as D.
+Chain B contains both polymer and non-polymer residues; separating them for processing, naming the non-polymer residues as E.
+Chain C contains both polymer and non-polymer residues; separating them for processing, naming the non-polymer residues as F.
+Chain a contains both polymer and non-polymer residues; separating them for processing, naming the non-polymer residues as G.
+Chain b contains both polymer and non-polymer residues; separating them for processing, naming the non-polymer residues as I.
+Chain c contains both polymer and non-polymer residues; separating them for processing, naming the non-polymer residues as J.

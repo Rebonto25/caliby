@@ -1,0 +1,4 @@
+Done. ok=65535, failed=1
+Summary: /ceph/opig-shared/users/haque/DPhil/caliby/scoring_analysis/mutant_pdbs_fast/summary.csv
+Failed entries:
+  - 0000000000000000: too many mutations: 18 > max 17

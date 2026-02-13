@@ -1,0 +1,7 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+Traceback (most recent call last):
+  File "/ceph/opig-shared/users/haque/DPhil/caliby/util_python_scripts/mutate_pdb.py", line 4, in <module>
+    from Bio import SeqIO
+ModuleNotFoundError: No module named 'Bio'

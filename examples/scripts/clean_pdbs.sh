@@ -3,6 +3,6 @@
 
 source env_setup.sh
 python3 caliby/data/preprocessing/atomworks/clean_pdbs.py \
-    input_cfg.pdb_dir=examples/example_data/native_pdbs \
-    num_workers=4 \
-    out_dir=examples/outputs/cleaned_pdbs
+    input_cfg.pdb_dir=/ceph/opig-shared/users/haque/DPhil/caliby/single_structure_pdbs \
+    num_workers=50 \
+    out_dir=/ceph/opig-shared/users/haque/DPhil/caliby/single_structure_pdbs/cleaned
